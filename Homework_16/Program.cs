@@ -8,16 +8,13 @@ namespace Homework_16
 {
   class Program
   {
-    static int SumElements(int[] array, int i = 0)
+    static int SumElements(int[] array, int i = 0, int sum = 0)
     {
-      int sum = 0;
-      if( i != array.Length)
+      if (i >= array.Length)
       {
-        sum += array[i];
-        i++;
-        SumElements(array);
+        return 0;
       }
-      return sum;
+      return SumElements( array, i + 1) + array[i];
     }
 
     static void Main(string[] args)
